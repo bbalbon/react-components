@@ -7,7 +7,7 @@ class GroceryListItem extends React.Component {
             hover: false
         };
     }
-    
+
     onListItemHover() {
         this.setState({
             hover: true
@@ -20,7 +20,7 @@ class GroceryListItem extends React.Component {
     }
     render () {
         const style = {
-            fontWeight: this.state.hover ? 'bold' : 'none'
+            fontWeight: this.state.hover ? 'bold' : 'normal'
         }
 
         return (
@@ -31,7 +31,7 @@ class GroceryListItem extends React.Component {
 
 const GroceryList = (props) => (
     <ul>
-        {props.items.map((item, i) => 
+        {props.items.map((item, i) =>
             <GroceryListItem key={i} item={item} />
         )}
     </ul>
