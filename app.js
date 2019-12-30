@@ -10,8 +10,13 @@ class GroceryListItem extends React.Component {
     
     onListItemHover() {
         this.setState({
-            hover: !this.state.hover
+            hover: true
         });
+    }
+    onListItemMouseLeave() {
+        this.setState({
+            hover: false
+        })
     }
     render () {
         const style = {
@@ -19,7 +24,7 @@ class GroceryListItem extends React.Component {
         }
 
         return (
-            <li style={style} onMouseOver={this.onListItemHover.bind(this)}>{this.props.item}</li>
+            <li style={style} onMouseOver={this.onListItemHover.bind(this)} onMouseLeave={this.onListItemMouseLeave.bind(this)}>{this.props.item}</li>
         )
     }
 }
